@@ -23,7 +23,7 @@ if($choice_work) {
         git pull origin engine
         if($choice_os -eq "win") {
             Invoke-WebRequest -Uri "https://www.cryengine.com/download" -OutFile "CRYENGINE_Launcher.exe"
-            CRYENGINE_Launcher.exe
+            Start-Process -FilePath "CRYENGINE_Launcher.exe" -ArgumentList "/silent" -Wait
         } else {
         }
         cd Tools
