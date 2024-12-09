@@ -21,6 +21,9 @@ if($choice_work) {
         git init
         git remote add origin git@github.com:BadlandsGames/Memori-Engine.git
         git pull origin engine
+        if($choice_os -eq "win") {
+        } else {
+        }
         cd Tools
     }
     # Memori Shader Tool
