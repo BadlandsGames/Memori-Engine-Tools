@@ -13,6 +13,14 @@ if($choice_os -eq "win") {
 }
 cd Tools
 if($choice_work) {
+    # Memori Engine
+    if($true) {
+        cd ..
+        mkdir Engine
+        cd Engine
+        git clone https://github.com/BadlandsGames/Memori-Engine
+        cd Tools
+    }
     # Memori Shader Tool
     if($true) {
         cd MemoriShaderTool
