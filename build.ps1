@@ -18,7 +18,9 @@ if($choice_work) {
         cd ..
         mkdir Engine
         cd Engine
-        git clone https://github.com/BadlandsGames/Memori-Engine
+        git init
+        git remote add origin git@github.com:BadlandsGames/Memori-Engine.git
+        git pull origin engine
         cd Tools
     }
     # Memori Shader Tool
