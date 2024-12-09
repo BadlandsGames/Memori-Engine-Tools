@@ -2,6 +2,9 @@ Write-Host "Enter your operating system:"
 Write-Host "win: Windows"
 Write-Host "linux: Linux"
 $choice_os = Read-Host -Prompt "choice"
+
+# Memori Shader Tool
+cd MemoriShaderTool
 Clear-Host
 if($choice_os -eq "win") {
     Clear-Host
@@ -10,6 +13,8 @@ if($choice_os -eq "win") {
     mkdir MemoriShaderTool
     move MemoriShaderTool.exe MemoriShaderTool\MemoriShaderTool.exe
     move ShaderConductor.exe MemoriShaderTool\ShaderConductor.exe
+    del compile.cpp
+    del api.hpp
 } elseif($choice_os -eq "linux") {
     Clear-Host
     g++ -o MemoriShaderTool.elf compiler.cpp
@@ -26,7 +31,10 @@ if($choice_os -eq "win") {
     mv MemoriShaderTool.elf MemoriShaderTool\MemoriShaderTool.elf
     mv ShaderConductor.elf MemoriShaderTool\ShaderConductor.elf
     rm -rf ShaderConductor
+    rm compile.cpp
+    rm api.hpp
 } else {
     Clear-Host
     Write-Host "Error: Operating System doesn't exist."
 }
+cd ..
