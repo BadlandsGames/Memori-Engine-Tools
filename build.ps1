@@ -11,7 +11,7 @@ if($choice_os -eq "win") {
 } else {
     Clear-Host "Error: Operating system does not exist."
 }
-
+cd Tools
 if($choice_work) {
     # Memori Shader Tool
     if($true) {
@@ -38,7 +38,6 @@ if($choice_work) {
             objcopy --input-format=pei-x86-64 --output-format=elf64-x86-64 ShaderConductor.dll ../../ShaderConductor.elf
             cd ..
             cd ..
-            mkdir MemoriShaderTool
             mv MemoriShaderTool.elf MemoriShaderTool\MemoriShaderTool.elf
             mv ShaderConductor.elf MemoriShaderTool\ShaderConductor.elf
             rm -rf ShaderConductor
