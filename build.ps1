@@ -37,5 +37,11 @@ if($true) {
         del api.hpp
         cd ..
     }
+    # Memori JavaScript Runner Tool
+    if($true) {
+        cd MemoriJavaScriptRunnerTool
+        move ../MemoriCoffeeScriptCompilerTool/JSRunner.dll JSRunner.dll
+        cd ..
+    }
 }
 cd ..
