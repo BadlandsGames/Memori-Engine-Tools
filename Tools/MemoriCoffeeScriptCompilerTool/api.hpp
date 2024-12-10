@@ -1,5 +1,6 @@
 #include <iostream>
 #include <windows.h>
+#include <string>
 using namespace std;
 
 void copy_file(string inputfile, string outputfile) {
