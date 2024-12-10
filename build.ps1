@@ -28,6 +28,9 @@ if($true) {
     # Memori CoffeeScript Compiler Tool
     if($true) {
         nuget install jint
+        cd MemoriCoffeeScriptCompilerTool
+        mcs -target:library -out:JSRunner.dll runner.cs
+        cd ..
     }
 }
 cd ..
