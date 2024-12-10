@@ -1,5 +1,5 @@
 #include "api.hpp"
 
 int main(int argc, char* argv[]) {
-    return 0;
+    return coffee_to_cs();
 }

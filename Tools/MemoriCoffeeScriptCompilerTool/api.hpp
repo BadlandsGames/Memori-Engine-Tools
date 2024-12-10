@@ -22,3 +22,13 @@ void coffeescript(string inputcoffee, string outputjs) {
     newcmd.append(" ");
     newcmd.append(output);
 }
+
+int coffee_to_cs(string inputcoffee, string outputcs) {
+    HMODULE hDll = LoadLibrary(L"JSRunner.dll");
+    if(hDll == NULL) {
+        cerr << "Failed to load DLL" << endl;
+        return 1;
+    }
+    FreeLibrary(hDll);
+    return 0;
+}
