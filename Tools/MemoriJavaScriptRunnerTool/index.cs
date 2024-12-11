@@ -1,13 +1,16 @@
 using System;
 using System.Runtime.InteropServices;
+using Jint;
 
 class Program
 {
-    [DllImport("JSRunner.dll", CharSet = CharSet.Unicode)]
-    public static extern Memori_RunJavaScript(string cmd);
     static void Main(string[] args)
     {
         string file_man = (string) args[1];
-        Memori_RunJavaScript(file_man);
+        var engine = new Engine();
+        string text_stuff = File.ReadAllText(file_man);
+        engine.SetValue("log", new Action<object>(Console.WriteLine));
+        text_stuff = text_stuff.Replace("console.log", "log");
+        engine.Execute(text_stuff);
     }
 }
