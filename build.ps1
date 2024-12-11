@@ -13,7 +13,11 @@ if($true) {
         cd Tools
     }
     # Memori Tool Library
-    if($true) {}
+    if($true) {
+        cd MemoriToolLibrary
+        pyinstaller --onefile index.py
+        cd ..
+    }
     # Memori Shader Tool
     if($true) {
         cd MemoriShaderTool
