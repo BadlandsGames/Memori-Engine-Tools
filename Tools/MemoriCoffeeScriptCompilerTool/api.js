@@ -1,10 +1,13 @@
 "use strict";
 
-class Debug {
-    static Log(textin) {
-        console.log(textin);
-    }
-    static Error(textin) {
-        console.error(textin);
-    }
+class Debug {}
+
+let Init = function() {}
+let Update = function() {}
+let Terminate = function() {}
+
+let UniversalStart = function() {
+    Init();
+    Update();
+    Terminate();
 }
