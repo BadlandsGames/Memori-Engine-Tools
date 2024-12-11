@@ -16,6 +16,7 @@ if($true) {
     if($true) {
         cd MemoriToolLibrary
         pyinstaller --onefile index.py
+        ren index.exe MemoriToolLibrary.exe
         cd ..
     }
     # Memori Shader Tool
