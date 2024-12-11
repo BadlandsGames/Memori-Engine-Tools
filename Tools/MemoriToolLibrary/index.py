@@ -14,3 +14,11 @@ for filename in os.listdir(folder_man):
                 + " "
                 + (file_path.split(".")[0] + ".js")
             )
+        elif file_path.split(".")[1] == "slang":
+            os.system(
+                "../MemoriShaderTool/MemoriShaderTool.exe"
+                + " "
+                + file_path
+                + " "
+                + (file_path.split(".")[0] + ".hlsl")
+            )
