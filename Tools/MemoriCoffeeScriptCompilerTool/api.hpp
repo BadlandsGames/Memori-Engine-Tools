@@ -12,7 +12,19 @@ void copy_file(string inputfile, string outputfile) {
     newcmd.append(outputfile);
 }
 
-void coffeescript(string inputcoffee, string outputjs) {
+void js2coffee(string inputjs, string outputcoffee) {
+    string newcmd = "";
+    newcmd.append("js2coffee");
+    newcmd.append(" ");
+    newcmd.append(inputjs);
+    newcmd.append(" ");
+    newcmd.append("-o");
+    newcmd.append(" ");
+    newcmd.append(outputcoffee);
+    system(newcmd);
+}
+
+void coffee2js(string inputcoffee, string outputjs) {
     string newcmd = "";
     copy_file(inputfile, "index.coffee");
     newcmd.append("coffee -c index.coffee");
@@ -21,5 +33,6 @@ void coffeescript(string inputcoffee, string outputjs) {
     newcmd.append(" ");
     newcmd.append("ren index.js");
     newcmd.append(" ");
-    newcmd.append(output);
+    newcmd.append(outputjs);
+    system(newcmd);
 }
