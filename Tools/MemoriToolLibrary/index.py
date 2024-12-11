@@ -2,6 +2,7 @@ import os
 import sys
 
 folder_man = sys.argv[1]
+out_folder = sys.argv[2]
 
 for filename in os.listdir(folder_man):
     file_path = os.path.join(folder_man, filename)
@@ -12,7 +13,7 @@ for filename in os.listdir(folder_man):
                 + " "
                 + file_path
                 + " "
-                + (file_path.split(".")[0] + ".js")
+                + (out_folder + file_path.split(".")[0] + ".js")
             )
         elif file_path.split(".")[1] == "slang":
             os.system(
@@ -20,5 +21,7 @@ for filename in os.listdir(folder_man):
                 + " "
                 + file_path
                 + " "
-                + (file_path.split(".")[0] + ".hlsl")
+                + (out_folder + file_path.split(".")[0] + ".hlsl")
             )
+
+# MemoriToolLibrary.exe E:/MyGames/ProjectFiles/
