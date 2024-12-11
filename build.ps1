@@ -29,7 +29,6 @@ if($true) {
     if($true) {
         cd MemoriCoffeeScriptCompilerTool
         nuget install jint
-        mcs -target:library -out:JSRunner.dll runner.cs
         cl /EHsc compile.cpp
         ren compile.exe MemoriCoffeeScriptCompilerTool.exe
         del compile.cpp
@@ -40,7 +39,8 @@ if($true) {
     # Memori JavaScript Runner Tool
     if($true) {
         cd MemoriJavaScriptRunnerTool
-        move ../MemoriCoffeeScriptCompilerTool/JSRunner.dll JSRunner.dll
+        mcs -out:MemoriJavaScriptRunnerTool.exe index.cs
+        del index.cs
         cd ..
     }
 }
