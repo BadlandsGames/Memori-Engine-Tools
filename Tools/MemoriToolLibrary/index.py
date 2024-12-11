@@ -4,6 +4,11 @@ import sys
 folder_man = sys.argv[1]
 out_folder = sys.argv[2]
 
+out_folder = out_folder.replace("\ "[0], "/")
+
+if out_folder[-1] != "/" and out_folder[-1] != "\ "[0]:
+    out_folder = out_folder.replace("\ "[0], "/") + "/"
+
 for filename in os.listdir(folder_man):
     file_path = os.path.join(folder_man, filename)
     if os.path.isfile(file_path):
@@ -23,5 +28,3 @@ for filename in os.listdir(folder_man):
                 + " "
                 + (out_folder + file_path.split(".")[0] + ".hlsl")
             )
-
-# MemoriToolLibrary.exe E:/MyGames/ProjectFiles/
