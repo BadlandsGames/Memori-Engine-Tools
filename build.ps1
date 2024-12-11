@@ -12,6 +12,8 @@ if($true) {
         Start-Process -FilePath "CRYENGINE_Launcher.exe" -ArgumentList "/silent" -Wait
         cd Tools
     }
+    # Memori Tool Library
+    if($true) {}
     # Memori Shader Tool
     if($true) {
         cd MemoriShaderTool
