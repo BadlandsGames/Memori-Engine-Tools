@@ -1,17 +1,5 @@
 cd Tools
 if($true) {
-    # Memori Engine
-    if($true) {
-        cd ..
-        mkdir Engine
-        cd Engine
-        git init
-        git remote add origin git@github.com:BadlandsGames/Memori-Engine.git
-        git pull origin engine
-        Invoke-WebRequest -Uri "https://www.cryengine.com/download" -OutFile "CRYENGINE_Launcher.exe"
-        Start-Process -FilePath "CRYENGINE_Launcher.exe" -ArgumentList "/silent" -Wait
-        cd Tools
-    }
     # Memori Tool Library
     if($true) {
         cd MemoriToolLibrary
