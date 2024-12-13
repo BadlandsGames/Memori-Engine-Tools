@@ -54,6 +54,19 @@ class GameObject
         @terminate_gen = terminate_in
     @ForceTerminate: () ->
         @newBase.running_current = false
-
+    @SetPos: (coolguydo_vec3) ->
+        @newBase.pos_x = coolguydo_vec3.x
+        @newBase.pos_y = coolguydo_vec3.y
+        @newBase.pos_z = coolguydo_vec3.z
+    @SetRot: (coolguydo_vec3) ->
+        @newBase.rot_x = coolguydo_vec3.x
+        @newBase.rot_y = coolguydo_vec3.y
+        @newBase.rot_z = coolguydo_vec3.z
+    @Scale: (coolguydo_vec3) ->
+        @newBase.scl_x = coolguydo_vec3.x
+        @newBase.scl_y = coolguydo_vec3.y
+        @newBase.scl_z = coolguydo_vec3.z
 
 player = new GameObject "Player"
+
+player.Scale Vector3 1, 5, 8
