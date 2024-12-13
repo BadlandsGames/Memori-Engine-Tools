@@ -1,5 +1,9 @@
 'use strict'
 
+class Debug
+    @Log: (usrin) ->
+        console.log usrin
+
 class Vector3
     constructor: (x_in, y_in, z_in) ->
         @x = x_in
@@ -42,7 +46,11 @@ class GameObject
         @newBase.StartFunc
     @Setup: (setup_in) ->
         @setup_gen = setup_in
-    @Update: (update_in) ->
+    @OnUpdate: (update_in) ->
         @update_gen = update_in
-    @Terminate: (terminate_in) ->
+    @OnTerminate: (terminate_in) ->
         @terminate_gen = terminate_in
+
+player = new GameObject "Player"
+
+player.Setup ->
