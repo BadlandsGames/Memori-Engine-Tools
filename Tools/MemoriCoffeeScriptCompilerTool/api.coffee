@@ -1,8 +1,12 @@
 'use strict'
 
 class Debug
-    @Log: (usrin) ->
-        console.log usrin
+    @Log: (cmdin) ->
+        console.log "Log: " + cmdin
+    @LogError: (cmdin) ->
+        console.error "Error: " + cmdin
+    @LogWarning: (cmdin) ->
+        console.warn "Warning: " + cmdin
 
 class Vector3
     constructor: (x_in, y_in, z_in) ->
@@ -44,67 +48,33 @@ class GameObject
         @update_gen = -> return
         @terminate_gen = -> return
         @newBase = new GameObject_Base @name, Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(1, 1, 1), setup_gen, update_gen, terminate_gen
-    async @StartFunc: () ->
-        try
-            @newBase.StartFunc
-        catch error
-            Debug.Log("Error on function: StartFunc")
-    async @Setup: (setup_in) ->
-        try
-            @setup_gen = setup_in
-        catch error
-            Debug.Log("Error on function: Setup")
-    async @OnUpdate: (update_in) ->
-        try
-            @update_gen = update_in
-        catch error
-            Debug.Log("Error on function: OnUpdate")
-    async @OnTerminate: (terminate_in) ->
-        try
-            @terminate_gen = terminate_in
-        catch error
-            Debug.Log("Error on function: OnTerminate")
-    async @ForceTerminate: () ->
-        try
-            @newBase.running_current = false
-        catch error
-            Debug.Log("Error on function: ForceTerminate")
-    async @SetPos: (coolguydo_vec3) ->
-        try
-            @newBase.pos_x = coolguydo_vec3.x
-            @newBase.pos_y = coolguydo_vec3.y
-            @newBase.pos_z = coolguydo_vec3.z
-        catch error
-            Debug.Log("Error on function: SetPos")
-    async @SetRot: (coolguydo_vec3) ->
-        try
-            @newBase.rot_x = coolguydo_vec3.x
-            @newBase.rot_y = coolguydo_vec3.y
-            @newBase.rot_z = coolguydo_vec3.z
-        catch error
-            Debug.Log("Error on function: SetRot")
-    async @Scale: (coolguydo_vec3) ->
-        try
-            @newBase.scl_x = coolguydo_vec3.x
-            @newBase.scl_y = coolguydo_vec3.y
-            @newBase.scl_z = coolguydo_vec3.z
-        catch error
-            Debug.Log("Error on function: Scale")
-    async @TranslateX: (input_man) ->
-        try
-            @newBase.pos_x += input_man
-        catch error
-            Debug.Log("Error on function: TranslateX")
-    async @TranslateY: (input_man) ->
-        try
-            @newBase.pos_y += input_man
-        catch error
-            Debug.Log("Error on function: TranslateY")
-    async @TranslateZ: (input_man) ->
-        try
-            @newBase.pos_z += input_man
-        catch error
-            Debug.Log("Error(function: TranslateZ, object: " + @name + ")")
-    async @Wait: (wait_func) ->
-        try
-        catch error
+    @StartFunc: () ->
+        @newBase.StartFunc
+    @Setup: (setup_in) ->
+        @setup_gen = setup_in
+    @OnUpdate: (update_in) ->
+        @update_gen = update_in
+    @OnTerminate: (terminate_in) ->
+        @terminate_gen = terminate_in
+    @ForceTerminate: () ->
+        @newBase.running_current = false
+    @SetPos: (coolguydo_vec3) ->
+        @newBase.pos_x = coolguydo_vec3.x
+        @newBase.pos_y = coolguydo_vec3.y
+        @newBase.pos_z = coolguydo_vec3.z
+    @SetRot: (coolguydo_vec3) ->
+        @newBase.rot_x = coolguydo_vec3.x
+        @newBase.rot_y = coolguydo_vec3.y
+        @newBase.rot_z = coolguydo_vec3.z
+    @Scale: (coolguydo_vec3) ->
+        @newBase.scl_x = coolguydo_vec3.x
+        @newBase.scl_y = coolguydo_vec3.y
+        @newBase.scl_z = coolguydo_vec3.z
+    @TranslateX: (input_man) ->
+        @newBase.pos_x += input_man
+    @TranslateY: (input_man) ->
+        @newBase.pos_y += input_man
+    @TranslateZ: (input_man) ->
+        @newBase.pos_z += input_man
+    @WaitMilliSeconds: (wait_func, time_ms) ->
+        setTimeout wait_func, time_ms
