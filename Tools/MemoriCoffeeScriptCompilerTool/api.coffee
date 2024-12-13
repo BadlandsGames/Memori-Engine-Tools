@@ -14,7 +14,15 @@ class Vector3
 
 class GameObject_Base
     constructor: (@name, @pos, @rot, @scl, @setupFunc, @updateFunc, @terminateFunc) ->
-        console.log "object created"
+        @pos_x = @pos.x
+        @pos_y = @pos.y
+        @pos_z = @pos.z
+        @rot_x = @rot.x
+        @rot_y = @rot.y
+        @rot_z = @rot.z
+        @scl_x = @scl.x
+        @scl_y = @scl.y
+        @scl_z = @scl.z
     @StartFunc: () ->
         @setupFunc()
         @updateFunc()
