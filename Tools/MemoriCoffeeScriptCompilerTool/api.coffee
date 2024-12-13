@@ -27,9 +27,11 @@ class GameObject_Base
         @scl_x = @scl.x
         @scl_y = @scl.y
         @scl_z = @scl.z
+        @running_current = true
     @StartFunc: () ->
         @setupFunc()
-        @updateFunc()
+        while @running_current
+            @updateFunc()
         @terminateFunc()
 
 class GameObject
@@ -50,5 +52,7 @@ class GameObject
         @update_gen = update_in
     @OnTerminate: (terminate_in) ->
         @terminate_gen = terminate_in
+    @ForceTerminate: () ->
+
 
 player = new GameObject "Player"
