@@ -53,6 +53,7 @@ class GameObject
     @OnTerminate: (terminate_in) ->
         @terminate_gen = terminate_in
     @ForceTerminate: () ->
+        @newBase.running_current = false
 
 
 player = new GameObject "Player"
