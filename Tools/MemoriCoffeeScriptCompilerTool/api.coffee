@@ -52,5 +52,3 @@ class GameObject
         @terminate_gen = terminate_in
 
 player = new GameObject "Player"
-
-player.Setup ->
