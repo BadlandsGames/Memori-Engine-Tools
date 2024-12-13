@@ -1,13 +1,17 @@
 "use strict";
 
-class Debug {}
-
-let Init = function() {}
-let Update = function() {}
-let Terminate = function() {}
-
-let UniversalStart = function() {
-    Init();
-    Update();
-    Terminate();
+class GameObject {
+    constructor(setupFunc, updateFunc, terminateFunc) {
+        this.Setup = setupFunc;
+        this.Update = updateFunc;
+        this.Terminate = terminateFunc;
+    }
+    static Start() {
+        this.Setup();
+        this.Update();
+        this.Terminate();
+        this = null;
+    }
 }
+
+let instance1 = new GameObject(function() {}, function() {}, function() {});
