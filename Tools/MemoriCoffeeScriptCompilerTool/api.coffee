@@ -66,7 +66,13 @@ class GameObject
         @newBase.scl_x = coolguydo_vec3.x
         @newBase.scl_y = coolguydo_vec3.y
         @newBase.scl_z = coolguydo_vec3.z
+    @TranslateX: (input_man) ->
+        @newBase.pos_x += input_man
+    @TranslateY: (input_man) ->
+        @newBase.pos_y += input_man
+    @TranslateZ: (input_man) ->
+        @newBase.pos_z += input_man
 
 player = new GameObject "Player"
 
-player.Scale Vector3 1, 5, 8
+player.TranslateX 0.1
