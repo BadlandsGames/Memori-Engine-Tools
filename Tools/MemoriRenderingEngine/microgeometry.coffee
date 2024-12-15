@@ -1,7 +1,14 @@
 meshoptimizer = require 'meshoptimizer'
 
 str_to_array = (binStr) ->
-    parseInt binStr.split('')
+    return parseInt binStr.split('')
+
+array_to_str = (array_int) ->
+    a = array_int.join().split(',')
+    b = ''
+    for pages in a
+        b = b + pages
+    return b
 
 simplifyVerticesBeyondThreshold = (vertices, threshold, newIndexBuffer) ->
     newVertices = []
@@ -24,6 +31,6 @@ simplifyMeshViaCamera = (binstr, threshold) ->
     vertexCount = meshoptimizer.generateVertexRemap(remap, null, vertices.length / 3, vertices, vertices.length, 3)
     newIndexBuffer = new Uint32Array(vertices.length / 3)
     meshoptimizer.remapIndices newIndexBuffer, remap, remap.length, vertices, vertices.length / 3
-    simplifyVerticesBeyondThreshold vertices, threshold, newIndexBuffer
+    return array_to_str simplifyVerticesBeyondThreshold vertices, threshold, newIndexBuffer
 
 simplifyMeshViaCamera '011000264', 2
